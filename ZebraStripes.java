@@ -68,6 +68,7 @@ public class ZebraStripes
                         0.05 + adjust2, right);
             //
 
+                // **work**
                 for (int j = 0; j < leftPts.size(); j++) {
                     int x1 = leftPts.elementAt(j).elementAt(0);
                     int y1 = leftPts.elementAt(j).elementAt(1);
@@ -92,6 +93,7 @@ public class ZebraStripes
                 drawFractalArc(g2d, i + 2 * offset, 800, i + 5 *
                         offset / 2, 100, 7, -0.05 + adjust4, right);
 
+                // **work**
                 for (int j = 0; j < leftPts.size(); j++) {
                     int x1 = leftPts.elementAt(j).elementAt(0);
                     int y1 = leftPts.elementAt(j).elementAt(1);
@@ -121,17 +123,20 @@ public class ZebraStripes
         // Recursive function to draw a smooth, long fractal arc
         public static void drawFractalArc(Graphics2D g2d, int x1, int y1, int x2, int y2, int depth, double curvature, boolean leftSide)
         {
+            // Essentially, this will draw a line if the points are adjacent to each other
             if (depth == 0)
             {
+                // Draws line between the two coordinates
                 g2d.drawLine(x1, y1, x2, y2);
+                // Populates the points within the left vector (and left side)
                 if (leftSide)
                 {
                     Vector<Integer> pts = new Vector<Integer>();
 
-                    pts. addElement(x1);
-                    pts. addElement(y1);
-                    pts. addElement(x2);
-                    pts. addElement(y2);
+                    pts.addElement(x1);
+                    pts.addElement(y1);
+                    pts.addElement(x2);
+                    pts.addElement(y2);
 
                     leftPts.addElement(pts);
                 }
