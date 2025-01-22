@@ -10,6 +10,8 @@ import javax.imageio.ImageIO;
 import java.util.Random;
 import java.util.Vector;
 
+//Additional Notes: y-values are fixed and will not change, however the x-values will change due to the adjustment
+
 public class ZebraStripes
     {
         public static void main (String[]args)
@@ -56,6 +58,7 @@ public class ZebraStripes
                 adjust4 *= adjustAmount;
                 adjust4 -= adjustAmount / 2.0;
 
+            // These will ideally make the right side "match" what the left side is doing
                 // Draw the first arc (left arc - down)
                 drawFractalArc(g2d, i, 0, i + offset / 2, 700, 7,
                         0.05 + adjust1, left);
@@ -63,6 +66,7 @@ public class ZebraStripes
                 // Draw the second arc (right arc - down)
                 drawFractalArc(g2d, i, 0, i + offset / 2, 700, 7,
                         0.05 + adjust2, right);
+            //
 
                 for (int j = 0; j < leftPts.size(); j++) {
                     int x1 = leftPts.elementAt(j).elementAt(0);
